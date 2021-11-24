@@ -1,0 +1,135 @@
+#mainHeading {
+    width: 756px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #ffd35f;
+    font-family: "Times New Roman", sans-serif;
+    font-style: italic;
+    font-size: 23pt;
+}
+#mainHeading::selection {
+    color: white;
+    background-color: #114da4;
+}
+#mainHeading span {
+    color: #66ff00;
+    font-size: 23pt;
+}
+#mainHeading span::selection {
+    color: white;
+    background-color: #4a98ff;
+}
+table {
+    width: 50%;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Calibri", sans-serif;
+    font-size: large;
+    border: 1px solid grey;
+}
+table td {
+    padding: 5px 15px;
+    border: 1px solid grey;
+}
+table th{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid grey;
+
+}
+.submitButton {
+    font-family: "Times New Roman", sans-serif;
+    width: 548px;
+    height: 45px;
+    padding: 6px 0 4px 10px;
+    border: 1px solid #cecece;
+    background: #F6F6f6;
+    border-radius: 8px;
+    font-size: 16pt;
+    margin-top: 0.5%;
+    cursor: pointer;
+}
+.text input{
+    height: 18pt;
+    margin-left: 2.7%;
+    width: 400px;
+    font-size: 14pt;
+    font-family: 'Times New Roman', sans-serif;
+}
+.history {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14pt;
+    margin: 7px auto;
+}
+.history td {
+    border: 1px solid rgb(118, 118, 118);
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.history th {
+    border: 1px solid rgb(118, 118, 118);
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.error {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16pt;
+    font-weight: bold;
+    /*border-radius: 3px;
+    border: 1px solid red;
+    color: darkred;*/
+    text-align: center;
+
+    height: 50px;
+    padding-top: 20px;
+    padding-bottom: 0;
+}
+select {
+    width: 435px;
+    font-size: 14pt;
+    padding: 6px 0 4px 10px;
+    border: 1px solid #cecece;
+    background: #F6F6f6;
+    border-radius: 8px;
+    -webkit-appearance: none;/* Chrome */
+    -moz-appearance: none;/* Firefox */
+    appearance: none;/* убираем дефолнтные стрелочки */
+    font-family: inherit;/* наследует от родителя */
+    color: #444;
+}
+.text{
+    display: inline-block;
+}
+.text input[type=text] {
+    margin-left: 5px;
+    width: 414px;
+    padding: 6px 0 4px 20px;
+    border: 1px solid #cecece;
+    background: #F6F6f6;
+    border-radius: 8px;
+}
+.form_radio_btn {
+    display: inline-block;
+    margin-right: 10px;
+}
+.form_radio_btn input[type=radio] {
+    display: none;
+}
+.form_radio_btn label {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0 15px;
+    line-height: 34px;
+    border: 1px solid #999;
+    border-radius: 6px;
+    user-select: none;
+}
+/* Checked */
+.form_radio_btn input[type=radio]:checked + label {
+    background: #ffe0a6;
+}
