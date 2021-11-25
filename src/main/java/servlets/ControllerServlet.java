@@ -22,8 +22,8 @@ public class ControllerServlet extends HttpServlet {
         String radius = req.getParameter("radius");
 
         if (coordinateX == null || coordinateY == null || radius == null) {
-            resp.getWriter().print("<link rel=\"stylesheet\" href=\"css/style.css\" type=\"text/css\"/>");
-            resp.getWriter().print("<div id=\"content\">");
+            resp.getWriter().print("<link rel=\"stylesheet\" href=\"css/styles.css\" type=\"text/css\"/>");
+            resp.getWriter().print("<div class=\"content\">");
             resp.getWriter().print("<div class='error'>");
             resp.getWriter().print("Ошибка: один или несколько передаваемых праматеров не указаны!");
             resp.getWriter().print("</div>");
@@ -35,30 +35,25 @@ public class ControllerServlet extends HttpServlet {
                 double x = Double.parseDouble(coordinateX);
                 double y = Double.parseDouble(coordinateY);
                 double r = Double.parseDouble(radius);
-
-                ArrayList<Double> allowedX = new ArrayList<>();
-                for (double i = -4; i <= 4; i++) {
-                    allowedX.add(i);
-                }
                 ArrayList<Double> allowedR = new ArrayList<>();
-                for (double i = 1; i <= 3; i += 0.5) {
+                for (double i = 1; i <= 5; i++) {
                     allowedR.add(i);
                 }
 
                 String error = "";
-                if (!allowedX.contains(x)) {
+                if (x <= -7.5 || x>=7.5) {
                     error += "<div class='error'>";
-                    error += "Ошибка в формате координаты x! Допустимые значения:</br>все целые числа от -4 до 4 включительно</br>";
+                    error += "Ошибка в формате координаты x! Допустимые значения:</br>все целые числа от -2 до 2 включительно</br>";
                     error += "</div>";
                 }
                 if (y <= -5 || y >= 5) {
                     error += "<div class='error'>";
-                    error += "Ошибка в формате координаты y! Допустимые значения:</br>все числа из промежутка (-5...5)</br>";
+                    error += "Ошибка в формате координаты y! Допустимые значения:</br>все числа из промежутка (-3...3)</br>";
                     error += "</div>";
                 }
                 if (!allowedR.contains(r)) {
                     error += "<div class='error'>";
-                    error += "Ошибка в формате радиуса! Допустимые значения:</br>все числа от 1 до 3 включительно с шагом 0.5</br>";
+                    error += "Ошибка в формате радиуса! Допустимые значения:</br>все числа от 1 до 5 включительно с шагом 1</br>";
                     error += "</div>";
                 }
 
@@ -69,7 +64,7 @@ public class ControllerServlet extends HttpServlet {
                     RequestDispatcher requestDispatcher = req.getRequestDispatcher("/check");
                     requestDispatcher.forward(req, resp);
                 } else {
-                    resp.getWriter().print("<link rel=\"stylesheet\" href=\"css/style.css\" type=\"text/css\"/>");
+                    resp.getWriter().print("<link rel=\"stylesheet\" href=\"css/styles.css\" type=\"text/css\"/>");
                     resp.getWriter().print("<div id=\"content\">");
                     resp.getWriter().print(error);
                     resp.getWriter().print("</div>");
@@ -77,8 +72,8 @@ public class ControllerServlet extends HttpServlet {
                     resp.getWriter().close();
                 }
             } catch (NumberFormatException e) {
-                resp.getWriter().print("<link rel=\"stylesheet\" href=\"css/style.css\" type=\"text/css\"/>");
-                resp.getWriter().print("<div id=\"content\">");
+                resp.getWriter().print("<link rel=\"stylesheet\" href=\"css/styles.css\" type=\"text/css\"/>");
+                resp.getWriter().print("<div class=\"content\">");
                 resp.getWriter().print("<div class='error'>");
                 resp.getWriter().print("Ошибка в формате: один или несколько переданных параметров</br>не являются числом!");
                 resp.getWriter().print("</div>");

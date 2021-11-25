@@ -30,10 +30,10 @@ public class AreaCheckServlet extends HttpServlet {
             hb.getHistory().add(new Point(x, y, r, isInArea));
             req.getSession().setAttribute("hb", hb);
         }
-        resp.getWriter().print("<link rel=\"stylesheet\" href=\"css/style.css\" type=\"text/css\"/>");
+        resp.getWriter().print("<link rel=\"stylesheet\" href=\"css/styles.css\" type=\"text/css\"/>");
         resp.getWriter().print("<div id=\"content\">");
         if (hb.getHistory().isEmpty()) {
-            resp.getWriter().print("<div class='error'>История запросов пуста, поэтому таблица не загружена.</div>");
+            resp.getWriter().print("<div class='error'>История запросов пуста.</div>");
         } else {
             resp.getWriter().print("<table class='history'>");
             resp.getWriter().print("<thead><tr><th>Значение X</th><th>Значение Y</th><th>Значение R</th><th>Попадание</th><th>Дата и время</th></tr></thead>");
@@ -50,14 +50,14 @@ public class AreaCheckServlet extends HttpServlet {
     }
 
     private boolean pointIsInTriangle(double x, double y, double r) {
-        return (y <= r / 2 - x) && (y >= 0) && (x >= 0);
+        return (y <= 2 * x + r) && (y >= 0) && (x <= 0);
     }
 
     private boolean pointIsInCircle(double x, double y, double r) {
-        return (x * x + y * y <= r * r / 4) && (y >= 0) && (x <= 0);
+        return (x * x + y * y <= r * r) && (y <= 0) && (x >= 0);
     }
 
     private boolean pointIsInRectangle(double x, double y, double r) {
-        return (y >= -r) && (y <= 0) && (x >= -r / 2) && (x <= 0);
+        return (y <= r) && (y >= 0) && (x <= r / 2) && (x >= 0);
     }
 }

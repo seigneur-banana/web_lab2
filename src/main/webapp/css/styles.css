@@ -20,24 +20,38 @@
     color: white;
     background-color: #4a98ff;
 }
-table {
+.can {
+    float: right;
+}
+/*table {
     width: 50%;
     margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
     font-family: "Calibri", sans-serif;
     font-size: large;
-    border: 1px solid grey;
 }
 table td {
     padding: 5px 15px;
-    border: 1px solid grey;
 }
 table th{
     padding-top: 5px;
     padding-bottom: 5px;
-    border: 1px solid grey;
 
+}*/
+.content{
+    width: 45%;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Calibri", sans-serif;
+    font-size: large;
+}
+.content div{
+    margin-bottom: 16px;
+}
+.x{
+    margin-bottom: 32px;
 }
 .submitButton {
     font-family: "Times New Roman", sans-serif;
@@ -80,9 +94,6 @@ table th{
     margin-right: auto;
     font-size: 16pt;
     font-weight: bold;
-    /*border-radius: 3px;
-    border: 1px solid red;
-    color: darkred;*/
     text-align: center;
 
     height: 50px;
@@ -103,10 +114,12 @@ select {
     color: #444;
 }
 .text{
+    margin-top: 16px;
     display: inline-block;
+    margin-left: -1px;
 }
 .text input[type=text] {
-    margin-left: 5px;
+    margin-left: 2px;
     width: 414px;
     padding: 6px 0 4px 20px;
     border: 1px solid #cecece;
