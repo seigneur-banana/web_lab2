@@ -4,4 +4,20 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+
+  <filter>
+
+    <filter-name>simplefilter</filter-name>
+
+    <filter-class>other.ValidFilter</filter-class>
+
+  </filter>
+
+  <filter-mapping>
+
+    <filter-name>simplefilter</filter-name>
+
+    <url-pattern>/ControllerServlet</url-pattern>
+
+  </filter-mapping>
 </web-app>

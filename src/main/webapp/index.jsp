@@ -231,6 +231,5 @@
             }
         %>
     }
-
     drawArea(3);
 </script>
